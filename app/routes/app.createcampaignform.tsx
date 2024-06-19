@@ -12,6 +12,7 @@ import {
 import React, { useCallback, useState, useRef } from "react";
 import { Resend } from "resend";
 import VercelInviteUserEmail from "~/emails/custom";
+// import { authenticate } from "~/shopify.server";
 
 type CreateCampaignFormProps = {
   activate: boolean;
@@ -21,6 +22,11 @@ type CreateCampaignFormProps = {
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const action: ActionFunction = async ({ request }) => {
+  // const { session } = await authenticate.admin(request);
+  // const { shop, accessToken } = session;
+  // console.log(shop);
+  // console.log(accessToken);
+
   const formData = await request.formData();
   const campaignName = formData.get("campaignName") as string;
   const recipient = formData.get("recipient") as string;

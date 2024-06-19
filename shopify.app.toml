@@ -3,7 +3,7 @@
 client_id = "cb5448b7750f2a59b6d4385399485b41"
 name = "email-marketing"
 handle = "email-marketing-24"
-application_url = "https://loop-referrals-rachel-substances.trycloudflare.com"
+application_url = "https://guyana-ottawa-equilibrium-operated.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_customers,write_customers,write_products"
 
 [auth]
 redirect_urls = [
-  "https://loop-referrals-rachel-substances.trycloudflare.com/auth/callback",
-  "https://loop-referrals-rachel-substances.trycloudflare.com/auth/shopify/callback",
-  "https://loop-referrals-rachel-substances.trycloudflare.com/api/auth/callback"
+  "https://guyana-ottawa-equilibrium-operated.trycloudflare.com/auth/callback",
+  "https://guyana-ottawa-equilibrium-operated.trycloudflare.com/auth/shopify/callback",
+  "https://guyana-ottawa-equilibrium-operated.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

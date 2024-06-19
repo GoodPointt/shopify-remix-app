@@ -2,6 +2,7 @@ import "@shopify/shopify-app-remix/adapters/node";
 import {
   ApiVersion,
   AppDistribution,
+  // BillingInterval,
   DeliveryMethod,
   shopifyApp,
 } from "@shopify/shopify-app-remix/server";
@@ -10,7 +11,7 @@ import { restResources } from "@shopify/shopify-api/rest/admin/2024-04";
 import prisma from "./db.server";
 
 const shopify = shopifyApp({
-  apiKey: process.env.SHOPIFY_API_KEY,
+  apiKey: process.env.SHOPIFY_API_KEY || "",
   apiSecretKey: process.env.SHOPIFY_API_SECRET || "",
   apiVersion: ApiVersion.April24,
   scopes: process.env.SCOPES?.split(","),
@@ -28,10 +29,10 @@ const shopify = shopifyApp({
       deliveryMethod: DeliveryMethod.Http,
       callbackUrl: "/webhooks",
       callback: async (topic, shop, body, webhookId) => {
-        console.log("~START~~~~~PRODUCT_UPdATE~~~~~");
+        console.log("=======CUSTOMER_CREATE=======");
         const payload = JSON.parse(body);
         console.log(payload);
-        console.log("~END~~~~~PRODUCT_UPdATE~~~~~");
+        console.log("=======CUSTOMER_CREATE=======");
       },
     },
   },
@@ -40,6 +41,18 @@ const shopify = shopifyApp({
       shopify.registerWebhooks({ session });
     },
   },
+  // billing: {
+  //   [MONTHLY_PLAN]: {
+  //     amount: 1,
+  //     currencyCode: "USD",
+  //     interval: BillingInterval.Every30Days,
+  //   },
+  //   [ANUAL_PLAN]: {
+  //     amount: 5,
+  //     currencyCode: "USD",
+  //     interval: BillingInterval.Annual,
+  //   },
+  // },
   future: {
     unstable_newEmbeddedAuthStrategy: true,
   },

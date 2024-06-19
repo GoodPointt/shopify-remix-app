@@ -72,7 +72,7 @@ export const VercelInviteUserEmail = ({
               Hello {username},
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
-              <strong>{invitedByUsername}</strong> (
+              {/* <strong>{invitedByUsername}</strong> (
               <Link
                 href={`mailto:${invitedByEmail}`}
                 className="text-blue-600 no-underline"
@@ -80,7 +80,8 @@ export const VercelInviteUserEmail = ({
                 {invitedByEmail}
               </Link>
               ) has invited you to the <strong>{teamName}</strong> team on{" "}
-              <strong>Vercel</strong>.
+              <strong>Vercel</strong>. */}
+              We are glad to see you at <strong>Awesome Shopping🛒</strong>!
             </Text>
             <Section>
               <Row>
